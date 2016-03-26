@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('evalApp.vote', ['ngRoute'])
+angular.module('evalApp.vote', ['ngRoute', 'ui-notification'])
 
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/vote', {
@@ -9,6 +9,11 @@ angular.module('evalApp.vote', ['ngRoute'])
         });
     }])
 
-    .controller('VoteCtrl', ['$scope', function ($scope) {
+    .controller('VoteCtrl', ['$scope', '$location', 'Notification', function ($scope, $location, Notification) {
+        if($scope.parties == 0){
+            Notification.error("Don't mess wih me! Parties list is empty!");
+            $location.path('/results');
+        }
+        
         $scope.test = "tempest keep was";
     }]);
