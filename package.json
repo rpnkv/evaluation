@@ -1,0 +1,24 @@
+{
+  "name": "evaluation",
+  "version": "1.0.0",
+  "description": "kid evaluation prject",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theIerus/evaluation.git"
+  },
+  "author": "Ierus <theierus@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theIerus/evaluation/issues"
+  },
+  "homepage": "https://github.com/theIerus/evaluation#readme",
+  "devDependencies": {
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-useref": "^3.0.8"
+  }
+}
