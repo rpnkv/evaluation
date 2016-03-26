@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('evalApp.general').controller('VoteSetupCtrl', function ($scope, $uibModalInstance, parties) {
+angular.module('evalApp.general').controller('VoteSetupCtrl', ['$scope','$uibModalInstance', 'parties', function ($scope, $uibModalInstance, parties) {
 
     $scope.parties = parties;
 
@@ -19,4 +19,4 @@ angular.module('evalApp.general').controller('VoteSetupCtrl', function ($scope, 
     $scope.startVote = function () {
         $uibModalInstance.close();
     };
-});
+}]);

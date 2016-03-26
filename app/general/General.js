@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('evalApp.general', ['ui.bootstrap'])
-    .controller("rootCtrl", function ($scope, $location, $uibModal) {
+    .controller("rootCtrl", ['$scope', '$location', '$uibModal' ,function ($scope, $location, $uibModal) {
 
         initScopeVariables();
 
@@ -30,4 +30,4 @@ angular.module('evalApp.general', ['ui.bootstrap'])
                 }
             })
         };
-    });
+    }]);
