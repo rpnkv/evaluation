@@ -1,6 +1,10 @@
-<div class="col-md-12">
-    <h2>Results page</h2>
-    <p>test var: {{test}}</p>
-    <p ng-click="showTest()">{{votes}}</p>
-    <p>Search icon: <span class="lead glyphicon glyphicon-remove"></span></p>
-</div>
+<h4 class="col-md-12 row" ng-repeat="party in parties" ng-show="parties.length > 1">
+    <div class="col-md-10">
+        <span>Имя: {{party.name}}</span>
+    </div>
+    <div class="col-md-2">
+        <span>Голосов: {{party.votes}}</span>
+    </div>
+</h4>
+
+<h2 class="col-md-12" ng-hide="parties.length > 0">Результаты голосования недоступны</h2>

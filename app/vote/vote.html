@@ -1,4 +1,7 @@
-<div class="col-md-12">
-    <h2>Vote page</h2>
-    <p>test var: {{test}}</p>
-</div>
+<h4 class="col-md-12 row" ng-repeat="party in parties">
+    <div class="col-md-9"><h2 class="lead">{{party.name}}</h2></div>
+    <div class="col-md-3">
+        <button class="btn btn-primary btn-block"
+                    ng-click="acceptVote($index)">Проголосовать</button>
+    </div>
+</h4>

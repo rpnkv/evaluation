@@ -15,5 +15,8 @@ angular.module('evalApp.vote', ['ngRoute', 'ui-notification'])
             $location.path('/results');
         }
         
-        $scope.test = "tempest keep was";
+        $scope.acceptVote = function (index) {
+            $scope.parties[index].votes++;
+            Notification.success("Голос принят.");
+        }
     }]);

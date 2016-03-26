@@ -7,6 +7,7 @@ angular.module('evalApp.general', ['ui.bootstrap'])
 
         function initScopeVariables() {
             $scope.newPartyName = "";
+            $scope.parties = [];
         }
 
         $scope.showResults = function () {
@@ -14,27 +15,19 @@ angular.module('evalApp.general', ['ui.bootstrap'])
         };
 
         $scope.initVote = function () {
+            $scope.parties = [];
             $uibModal.open({
                 templateUrl: 'voteSetup/voteSetup.html',
-                controller: 'rootCtrl'
-            });
+                controller: 'VoteSetupCtrl',
+                resolve : {
+                    parties: function () {
+                        return $scope.parties;
+                    }
+                }
+            }).result.then(function () {
+                if($scope.parties.length > 1){
+                    $location.path('/vote');
+                }
+            })
         };
-
-        $scope.addParty = function () {
-            $scope.parties.push({
-                name: $scope.newPartyName,
-                votes: 0
-            });
-            $scope.newPartyName = "";
-        };
-
-        $scope.removeParty = function (index) {
-            $scope.parties.splice(index,1);
-        };
-
-        $scope.startVote = function () {
-            $location('/vote');
-        };
-
-        $scope.parties = [];
     });
