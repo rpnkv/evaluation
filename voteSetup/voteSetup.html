@@ -1,0 +1,27 @@
+<div class="modal-header">
+    <h3 class="modal-title">Настройка параметров голосования</h3>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-md-12 row" ng-repeat="party in parties">
+            <div class="col-md-11"><span class="text-info lead">{{party.name}}</span></div>
+            <div class="col-md-1"><span class="lead glyphicon glyphicon-remove"
+                                            ng-click="removeParty($index)"></span></div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer row">
+    <div class="col-md-6"><input type="text" class="form-control"
+                                 ng-model="newPartyName"></div>
+    <div class="col-md-4">
+        <button class="btn btn-primary" type="button"
+                ng-click="addParty()"
+                ng-disabled="newPartyName.length < 5">Добавить участника
+        </button>
+    </div>
+    <div class="col-md-2">
+        <button class="btn btn-success" type="button" ng-click="startVote()"
+                ng-disabled="parties.length < 2">Начать
+        </button>
+    </div>
+</div>
